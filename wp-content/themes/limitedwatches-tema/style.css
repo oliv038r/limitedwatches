@@ -1,0 +1,465 @@
+/* CSS Document
+
+Theme Name: Limited Watches Child Theme
+Author: Gruppe 6
+Author URI: http://wpastra.com/about/
+Description: Stylish Child Theme based on Astra
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: limitedwatches-tema
+Template: astra
+
+*/
+
+
+/* ------------------------------------------------------------- Overordnet css ------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------- Scroll feature ------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------- Sticky header ------------------------------------------------------------- */
+
+.ehf-header #masthead {
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/* ------------------------------------------------------------- Dropdown ------------------------------------------------------------- */
+
+.dropdown {
+    display: block;
+    position: relative;
+    left: 90%;
+    top: 15px;
+    cursor: pointer;
+    width: 2rem;
+}
+.dropdown_icon:hover {
+    transform: scale(1.2);
+}
+.dropdown_icon {
+    width: 50px;
+    height: 50px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    min-width: 100%;
+    overflow: auto;
+    z-index: 1;
+    right: 0;
+}
+.dropdown_title {
+    color: #939393;
+    font-size: 0.7em;
+    text-align: right;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.dropdown-content button {
+    border-radius: 0px;
+    color: #595959;
+    border: none;
+    width: 100%;
+    text-align: right;
+    padding-left: 100px;
+    padding-right: 10px;
+    text-transform: none;
+    font-weight: 500;
+    margin-right: 20px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    min-width: 100%;
+}
+
+/* -------------------------------------------------------  Styling af produktsiden med ure ------------------------------------------------------  */
+
+.watches {
+    display: grid;
+}
+.background-img,
+.title,
+.tagline,
+.discover_btn,
+.scrolldown {
+    grid-area: 1 / 1;
+}
+.title,
+.tagline,
+.discover_btn,
+.scrolldown {
+    place-self: center center;
+    text-align: center;
+}
+.background-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.title {
+    margin-bottom: 3em;
+    font-size: 4rem;
+    font-family: "Noto Serif KR", Sans-serif;
+    /*INDSÆT FONT I HEAD!!!!!!!!!! */
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+}
+.tagline {
+    font-size: 1.6rem;
+    font-family: "Noto Serif KR", Sans-serif;
+    /*INDSÆT FONT I HEAD!!!!!!!!!! */
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+}
+.discover_btn {
+    margin-top: 300px;
+    z-index: 995;
+}
+
+/* https://codepen.io/ahmetsali/pen/MdLbby */
+
+.scrolldown {
+    width: 1px;
+    height: 60px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom, white 50%, rgba(255, 255, 255, 0) 50%);
+    background-position: 0 -60px;
+    background-size: 100% 200%;
+    animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+    margin-top: 80vh;
+}
+@keyframes scrolldown {
+    0% {
+        background-position: 0 -60px;
+    }
+    75% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 60px;
+    }
+}
+.watchcontainer {
+    margin-top: -120px;
+}
+
+/* ------------------------------------------------------------- Hover effekter ------------------------------------------------------------- */
+
+.swiper-slide-image:hover {
+    transform: scale(105%);
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+}
+.elementor-widget-heading .elementor-heading-title[class*="elementor-size-"] > a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background: white;
+    top: 47%;
+    animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+.elementor-widget-heading .elementor-heading-title[class*="elementor-size-"] > a:hover:before {
+    animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+.hfe-nav-menu__align-justify .hfe-nav-menu__layout-horizontal .hfe-nav-menu a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background: white;
+    top: 47%;
+    animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+.hfe-nav-menu__align-justify .hfe-nav-menu__layout-horizontal .hfe-nav-menu a:hover:before {
+    animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+@keyframes in {
+    0% {
+        width: 0;
+        left: 0;
+        right: auto;
+    }
+    100% {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+@keyframes out {
+    0% {
+        width: 100%;
+        left: auto;
+        right: 0;
+    }
+    100% {
+        width: 0;
+        left: auto;
+        right: 0;
+    }
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -----------------------------  Media Q's udvalgsside ------------------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+    /*  Dropdown  */
+    .dropdown {
+        left: 86%;
+    }
+}
+@media screen and (max-width: 768px) {
+    /*  Dropdown  */
+    .dropdown-content {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+}
+@media screen and (max-width: 746px) {
+    .dropdown {
+        left: 92%;
+    }
+}
+@media screen and (max-width: 420px) {
+    /*  Dropdown  */
+    .dropdown {
+        left: 91%;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .tagline {
+        font-size: 1.2rem;
+    }
+    .flex h4 {
+        color: white;
+    }
+}
+
+/* -------------------------------------------------------------  Single view ------------------------------------------------------------- */
+
+
+/*  Generelt  */
+
+.ast-container {
+    max-width: 100%;
+}
+.ast-container,
+.ast-container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*  Styling af article  */
+
+.watchcontainer_single {
+    display: flex;
+    padding: 2em;
+}
+.col_left {
+    width: 50vw;
+}
+.col_left article {
+    padding: 5em;
+}
+.col_right {
+    width: 50vw;
+}
+.background-img-single {
+    min-width: 100vw;
+    height: 40vh;
+    object-fit: cover;
+    margin-top: -90px;
+}
+.title-single {
+    margin-bottom: 0.5em;
+    font-size: 4rem;
+    font-family: "Noto Serif KR", Sans-serif;
+    /*INDSÆT FONT I HEAD!!!!!!!!!! */
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    text-align: left;
+}
+.tagline-single {
+    font-size: 1.6rem;
+    font-family: "Noto Serif KR", Sans-serif;
+    /*INDSÆT FONT I HEAD!!!!!!!!!! */
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    text-align: left;
+}
+.the_story {
+    font-size: 0.6rem;
+    margin-bottom: 0.6em;
+    color: gray;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.price {
+    font-weight: 600;
+    margin-bottom: 0.2em;
+    font-size: 2em;
+}
+hr.line1 {
+    border-top: 1px solid black;
+}
+.detalje_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-column-gap: 1.5em;
+    margin: auto;
+    text-align: center;
+}
+.detalje_col {}
+.detalje_title {
+    font-size: 0.6rem;
+    margin-bottom: 0.2em;
+    color: gray;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.product_img {
+    height: 800px;
+    object-fit: cover;
+}
+
+/* ---------------------- SINGLE - CONTACT ----------------------- */
+
+.contact {
+    width: 100%;
+    height: 20vh;
+    display: block;
+    text-align: center;
+    margin-bottom: 20vh;
+    text-transform: uppercase;
+}
+.form {
+    margin: 0 auto;
+    width: 400px;
+    color: white;
+}
+.form h4 {
+    margin-bottom: 25px;
+    color: white;
+}
+.group {
+    position: relative;
+    margin-bottom: 25px;
+}
+input {
+    font-size: 13px;
+    height: 25px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 400px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: black;
+    background-color: transparent;
+    transition: 0.2s ease;
+}
+input:focus {
+    outline: none;
+    opacity: 1;
+}
+label {
+    color: black;
+    font-size: 13px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 0px;
+    transition: 0.2s ease all;
+}
+
+/* active state */
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: white;
+    opacity: 0.7;
+}
+a.send-btn {
+    float: right;
+    color: white;
+    transition: 0.2s ease;
+    font-weight: 600;
+}
+a.send-btn:hover {
+    color: #d1d1d1;
+    cursor: pointer;
+    transition: 1s;
+}
+@media screen and (max-width: 1024px) {
+    .col_left {
+        width: 60vw;
+    }
+    .col_right {
+        width: 40vw;
+    }
+    .detalje_container {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    .product_img {
+        height: 500px;
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .watchcontainer_single {
+        display: block;
+        padding: 0.2em;
+    }
+    .bk_btn {
+        width: 50vw;
+        margin-left: 25vw;
+        padding: 2em;
+        margin-top: 1em;
+    }
+    .col_left {
+        width: 100vw;
+    }
+    .col_left article {
+        padding: 2em;
+    }
+    .product_img {
+        height: 400px;
+        margin-top: 0px;
+    }
+    .col_right {
+        width: 100vw;
+    }
+    .title-single {
+        font-size: 3rem;
+    }
+}
